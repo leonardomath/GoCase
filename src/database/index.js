@@ -1,7 +1,8 @@
 import { Sequelize } from 'sequelize'
 import configDatabase from '../config/database'
+import User from '../app/models/User'
 
-const models = []
+const models = [User]
 
 class Database {
 
@@ -11,6 +12,8 @@ class Database {
 
   init() {
     this.connection = new Sequelize(configDatabase)
+
+    models.map(model => model.init(this.connection))
   }
 }
 
