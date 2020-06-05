@@ -9,6 +9,6 @@ class Database {
   }
 
   init() {
-    this.connection = new Sequelize('gocase', 'postgress', 'docker', { host: 'localhost', dialect: 'postgres',})
+    this.connection = new Sequelize('gocase', 'postgres', '', { host: 'localhost', dialect: 'postgres',})
   }
 }
